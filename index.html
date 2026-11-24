@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLACKOUT: REDACTED — Spy Word Deduction Thriller</title>
+  <meta name="description" content="Crack 1,040 redacted spy dossiers across 13 classified folders in BLACKOUT: REDACTED — a 5-letter word deduction espionage thriller for Android." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    :root {
+      --bg: #07090d;
+      --panel: #0f131a;
+      --border: #1e2530;
+      --red: #dc2626;
+      --amber: #f59e0b;
+      --emerald: #10b981;
+      --text: #e4e4e7;
+      --muted: #a1a1aa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(220,38,38,0.14), transparent 52%),
+        linear-gradient(180deg, #07090d 0%, #0b0f17 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    header {
+      border-bottom: 1px solid rgba(220,38,38,0.3);
+      background: rgba(7,9,13,0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+    }
+    .brand img { width: 32px; height: 32px; border-radius: 7px; border: 1px solid rgba(245,158,11,0.45); }
+    .nav-links { display: flex; gap: 18px; font-size: 0.85rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .nav-links a:hover { color: var(--amber); }
+
+    main { max-width: 960px; margin: 0 auto; padding: 56px 20px 80px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      align-items: center;
+      background: rgba(15,19,26,0.88);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+    }
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 26px; }
+      .hero-icon { margin: 0 auto; }
+      .cta-row { justify-content: center; }
+    }
+    .hero-icon {
+      width: 156px;
+      height: 156px;
+      border-radius: 28px;
+      border: 2px solid rgba(245,158,11,0.55);
+      box-shadow: 0 12px 30px rgba(245,158,11,0.18);
+    }
+    .kicker {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #fca5a5;
+      background: rgba(127,29,29,0.45);
+      border: 1px solid rgba(220,38,38,0.55);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem);
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    h1 span { color: var(--amber); }
+    .lead { color: #d4d4d8; font-size: 1.02rem; margin-bottom: 22px; max-width: 58ch; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      background: var(--emerald);
+      color: #052e16;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #181c24;
+      border: 1px solid #303846;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .btn-secondary:hover { border-color: var(--amber); color: var(--amber); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .card h2 {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+    .card p { font-size: 0.92rem; color: var(--muted); }
+
+    .support-box {
+      margin-top: 36px;
+      background: rgba(15,19,26,0.75);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--amber);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .support-box h3 { font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+    .support-box p { font-size: 0.9rem; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--amber); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand mono" href="index.html">
+        <img src="app_icon.png" alt="BLACKOUT: REDACTED Icon" />
+        <span>BLACKOUT: REDACTED</span>
+      </a>
+      <nav class="nav-links mono">
+        <a href="#features">INTEL</a>
+        <a href="#support">SUPPORT</a>
+        <a href="privacy-policy.html">PRIVACY POLICY</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-icon" src="app_icon.png" alt="BLACKOUT: REDACTED App Icon" />
+      <div>
+        <div class="kicker mono">● SAT-LINK ACTIVE // ANDROID</div>
+        <h1 class="mono">BLACKOUT: <span>REDACTED</span></h1>
+        <p class="lead">
+          Crack 1,040 classified spy dossiers across 13 European intelligence folders. Decode hidden 5-letter redactions, follow handler debriefs, and hunt Target Alpha from Berlin to the Arctic—fully playable offline.
+        </p>
+        <div class="cta-row mono">
+          <!-- Replace # with your live Google Play Store URL once published -->
+          <a class="btn-primary" href="https://play.google.com/store" target="_blank" rel="noopener">
+            ▶ GET IT ON GOOGLE PLAY
+          </a>
+          <a class="btn-secondary" href="privacy-policy.html">
+            PRIVACY POLICY
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="grid">
+      <div class="card">
+        <h2 class="mono">1,040 Story Missions</h2>
+        <p>Progress through 13 classified manila folders and 104 espionage chapters where every solved dossier links directly into the next plot twist.</p>
+      </div>
+      <div class="card">
+        <h2 class="mono">3 Clearance Tiers</h2>
+        <p>Switch anytime between Confidential (3 words), Secret (4 words), and Top Secret (5 words) validated against a 12,500+ word Scrabble-grade dictionary.</p>
+      </div>
+      <div class="card">
+        <h2 class="mono">Tactical Field Tools</h2>
+        <p>Deploy Clue Hints, Vowel Scans, First-Letter Decrypts, and +2 Extra Row rescues—plus climb the Agency Roster from Field Recruit to Omega Ghost.</p>
+      </div>
+    </section>
+
+    <section id="support" class="support-box">
+      <div>
+        <h3 class="mono">Operative Support &amp; Inquiries</h3>
+        <p>Need help with a purchase restore, bug report, or feedback? Contact our support desk directly.</p>
+      </div>
+      <a class="btn-secondary mono" href="mailto:blackoutredactedsupport@gmail.com?subject=BLACKOUT%3A%20REDACTED%20Support">
+        ✉ blackoutredactedsupport@gmail.com
+      </a>
+    </section>
+  </main>
+
+  <footer class="mono">
+    <p>&copy; 2026 BLACKOUT: REDACTED. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
